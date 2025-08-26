@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "E-Commerce Mini",
-  description: "A mini e-commerce project with Next.js 15 + TailwindCSS",
+  description: "A mini e-commerce project with Next.js 15 + TailwindCSS + shadcn/ui",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-gray-50 text-gray-900">
-        {children}
+      <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );
