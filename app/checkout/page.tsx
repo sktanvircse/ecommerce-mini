@@ -11,7 +11,7 @@ export default function CheckoutPage() {
     const dispatch = useDispatch();
     const router = useRouter();
 
-    const subtotal = items.reduce((acc, item) => acc + item.price, 0);
+    const subtotal = items.reduce((acc: any, item: any) => acc + item.price, 0);
     const deliveryFee = items.length > 0 ? 5 : 0;
     const total = subtotal + deliveryFee;
 
@@ -42,7 +42,7 @@ export default function CheckoutPage() {
             ) : (
                 <>
                     <ul className="space-y-4">
-                        {items.map((item) => (
+                        {items.map((item: any) => (
                             <li
                                 key={item.id}
                                 className="flex items-center justify-between border p-3 rounded-lg"

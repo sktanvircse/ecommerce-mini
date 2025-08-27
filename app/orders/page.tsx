@@ -14,7 +14,7 @@ export default function OrdersPage() {
                 <p className="text-gray-500">No orders yet.</p>
             ) : (
                 <div className="space-y-6">
-                    {orders.map((order) => (
+                    {orders.map((order: any) => (
                         <div
                             key={order.id}
                             className="border p-4 rounded-lg shadow-sm bg-white"
@@ -25,7 +25,7 @@ export default function OrdersPage() {
                             </div>
 
                             <ul className="space-y-2">
-                                {order.items.map((item) => (
+                                {order.items.map((item: any) => (
                                     <li key={item.id} className="flex justify-between">
                                         <span>{item.name}</span>
                                         <span>${item.price}</span>
